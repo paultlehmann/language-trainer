@@ -1,36 +1,31 @@
 import { CardContent, Typography } from '../mui';
-import WordInput from './WordInput';
 import { TLearningLanguage, TSourceLanguage } from '../types';
 
-interface ISingleWordCardProps {
-  interactive?: boolean;
+interface ISentenceQuizCardProps {
   learningLanguage: TLearningLanguage;
-  learningLanguageWord: string;
+  learningLanguageSentence: string;
   sourceLanguage: TSourceLanguage;
-  sourceLanguageWord: string;
+  sourceLanguageSentence: string;
 }
 
-const SingleWordCard = (props: ISingleWordCardProps) => {
+const SentenceQuizCard = (props: ISentenceQuizCardProps) => {
   const {
-    interactive,
     learningLanguage,
-    learningLanguageWord,
+    learningLanguageSentence,
     sourceLanguage,
-    sourceLanguageWord
+    sourceLanguageSentence
   } = props;
 
   return (
     <CardContent>
       <Typography sx={{ fontSize: 14 }}>{sourceLanguage}</Typography>
-      <Typography variant="h5">{sourceLanguageWord}</Typography>
+      <Typography variant="h5">{sourceLanguageSentence}</Typography>
       <Typography sx={{ fontSize: 14, marginTop: '20px' }}>
         {learningLanguage}
       </Typography>
-      <Typography variant="h5">
-        {interactive ? <WordInput /> : learningLanguageWord}
-      </Typography>
+      <Typography variant="h5">{learningLanguageSentence}</Typography>
     </CardContent>
   );
 };
 
-export default SingleWordCard;
+export default SentenceQuizCard;

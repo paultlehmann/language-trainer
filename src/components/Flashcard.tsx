@@ -1,4 +1,5 @@
 import { Card } from '../mui';
+// import SentenceCard from './SentenceCard'
 import SingleWordCard from './SingleWordCard';
 import { getRandomWord } from '../util/word';
 import {
@@ -34,12 +35,28 @@ const Flashcard = (props: IFlashcardProps) => {
     rules.articles.def
   );
 
+  const interactive = true;
+
+  // const buildSentence = (lang: TLearningLanguage | TSourceLanguage) => {
+
+  // }
+
+  // const learningLanguageSentence = buildSentence()
+
   const getFlashcard = (cardType: TFlashcardType) => {
     switch (cardType) {
+      // case 'sentenceQuiz':
+      //   <SentenceCard
+      //   learningLanguage={learningLanguage}
+      //   sourceLanguage={sourceLanguage}
+      //   learningLanguageSentence={learningLanguageSentence}
+      //   sourceLanguageSentence={sourceLanguageSentence}
+      //   />
       case 'singleWord':
       default:
         return (
           <SingleWordCard
+            interactive={interactive}
             learningLanguage={learningLanguage}
             sourceLanguage={sourceLanguage}
             learningLanguageWord={learningLanguageWord}
