@@ -12,12 +12,13 @@ export interface IWords {
 export interface IWord {
     de: string;
     en: string;
-    ru?: string;
+    // ru?: string;
 }
 
 export interface INoun extends IWord {
     gender: TGender;
     plural?: string;
+    enPlural?: string;
 }
 
 interface IVerb extends IWord {
@@ -63,8 +64,18 @@ interface IPersons {
     they: string;
 }
 
-type TGender = 'f' | 'm' | 'n'
+export type TGender = 'f' | 'm' | 'n'
 
 export type TCase = 'nom' | 'acc' | 'dat' | 'gen'
 
 export type TWordType = 'adj' | 'noun' | 'verb'
+
+export type TPerson = 'i' | 'you' | 'he' | 'we' | 'yall' | 'they'
+
+export type TTense = 'present' | 'past' | 'future'
+
+export type TArticleType = 'def' | 'indef' | 'none'
+
+export type TSourceLanguage = 'en'
+
+export type TLearningLanguage = 'de' 

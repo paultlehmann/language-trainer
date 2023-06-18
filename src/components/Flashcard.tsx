@@ -1,35 +1,12 @@
 import { Card, CardContent, Typography } from '../mui';
-import { IArticlesByGender, ILanguageConfig, INoun, IWord, IWords, TCase, TWordType } from '../types';
-
-type TSourceLanguage = 'en'
-type TLearningLanguage = 'de' | 'ru'
+import { getRandomWord } from '../util/word';
+import { ILanguageConfig, TLearningLanguage, TSourceLanguage, TWordType } from '../types';
 
 interface IFlashcardProps {
     config: ILanguageConfig;
     learningLanguage: TLearningLanguage;
     sourceLanguage?: TSourceLanguage;
     style: any
-}
-
-const getArticle = (noun: INoun, gCase: TCase, articleConfig: IArticlesByGender) => {
-  return articleConfig[noun.gender][gCase]
-}
-
-const getWord = (type: TWordType, lang: TSourceLanguage | TLearningLanguage, wordInfo: IWord, articleConfig: IArticlesByGender) => {
-  if (lang === 'de' && type === 'noun') {
-    return `${getArticle(wordInfo as INoun, 'nom', articleConfig)} ${wordInfo[lang]}`
-  } else if (lang === 'en' && type === 'verb') {
-    return `to ${wordInfo[lang]}`
-  } else {
-    return wordInfo[lang]
-  }
-}
-
-const getRandomWord = (words: IWords, type: TWordType, articleConfig: IArticlesByGender) => {
-  const wordInfo = words[type][Math.floor(Math.random() * words[type].length)]
-  const learningLanguageWord = getWord(type, 'de', wordInfo, articleConfig)
-  const sourceLanguageWord = getWord(type, 'en', wordInfo, articleConfig)
-  return { learningLanguageWord, sourceLanguageWord }
 }
 
 const Flashcard = (props: IFlashcardProps) => {
