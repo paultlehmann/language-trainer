@@ -1,3 +1,4 @@
+import config from '@/config-de';
 import Flashcard from "@/components/Flashcard";
 
 const Home = () => {
@@ -6,8 +7,8 @@ const Home = () => {
       <Flashcard style={{
         alignItems: 'center'
       }} learningLanguage='de'
-      learningLanguageWord='Wurst'
-      sourceLanguageWord='Sausage' />
+      config={config}
+       />
     </main>
   );
 };

@@ -3,26 +3,28 @@ export interface ILanguageConfig {
     words: IWords;
 }
 
-interface IWords {
-    adjectives: IAdjective[];
-    nouns: INoun[];
-    verbs: IVerb[];
+export interface IWords {
+    adj: IAdjective[];
+    noun: INoun[];
+    verb: IVerb[];
 }
 
-interface IWord {
-    word: string;
+export interface IWord {
+    de: string;
+    en: string;
+    ru?: string;
 }
 
-interface INoun extends IWord {
+export interface INoun extends IWord {
     gender: TGender;
     plural?: string;
 }
 
 interface IVerb extends IWord {
-    trans: boolean | 'both'
+    trans: boolean | 'both' | 'datOb' | 'datOpt'
 }
 
-interface IAdjective extends IWord { }
+interface IAdjective extends IWord {}
 
 interface IRules {
     articles: IArticles;
@@ -34,7 +36,7 @@ interface IArticles {
     indef: IArticlesByGender;
 }
 
-interface IArticlesByGender {
+export interface IArticlesByGender {
     m: ICases,
     f: ICases,
     n: ICases
@@ -62,3 +64,7 @@ interface IPersons {
 }
 
 type TGender = 'f' | 'm' | 'n'
+
+export type TCase = 'nom' | 'acc' | 'dat' | 'gen'
+
+export type TWordType = 'adj' | 'noun' | 'verb'

@@ -64,40 +64,81 @@ const configDE: ILanguageConfig = {
         }
     },
     words: {
-        verbs: [{
-            word: 'lieben',
+        verb: [{
+            de: 'lieben',
+            en: 'love',
             trans: true
         },
         {
-            word: 'spielen',
+            de: 'spielen',
+            en: 'play',
             trans: false
         },
         {
-            word: 'stehlen',
+            de: 'stehlen',
+            en: 'steal',
+            trans: 'datOpt'
+        },
+        {
+        de: 'geben',
+        en: 'give',
+        trans: 'datOb'
+        },
+        {
+        de: 'schlagen',
+        en: 'hit',
+        trans: false
+        },
+        {
+            de: 'fahren',
+            en: 'drive',
             trans: 'both'
         }
         ],
-        nouns: [{
-            word: 'Mann',
+        noun: [{
+            de: 'Mann',
+            en: 'man',
             gender: 'm',
             plural: "Männer"
         },
         {
-            word: 'Frau',
+            de: 'Frau',
+            en: 'woman',
             gender: 'f',
             plural: 'Frauen'
         },
         {
-            word: 'Kind',
+            de: 'Kind',
+            en: 'child',
             gender: 'n',
             plural: 'Kinder'
-        }],
-        adjectives: [{
-            word: 'gut'
         },
         {
-            word: 'schlecht'
-        }]
+            de: 'Hund',
+            en: 'dog',
+            gender: 'm'
+        },
+    {
+        de: 'Katze',
+        en: 'cat',
+        gender: 'f'
+    }],
+        adj: [{
+            de: 'gut',
+            en: 'good'
+        },
+        {
+            de: 'schlecht',
+            en: 'bad'
+        },
+    {
+        de: 'alt',
+        en: 'old'
+    },
+{
+    de: 'jung',
+    en: 'young'
+}]
     }
 }
 
