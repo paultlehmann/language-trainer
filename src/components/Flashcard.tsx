@@ -1,8 +1,10 @@
-import { Card, CardContent, Typography } from '../mui';
+import { Card } from '../mui';
+import SingleWordCard from './SingleWordCard';
 import { getRandomWord } from '../util/word';
-import { ILanguageConfig, TLearningLanguage, TSourceLanguage, TWordType } from '../types';
+import { ILanguageConfig, TFlashcardType, TLearningLanguage, TSourceLanguage, TWordType } from '../types';
 
 interface IFlashcardProps {
+    cardType: TFlashcardType;
     config: ILanguageConfig;
     learningLanguage: TLearningLanguage;
     sourceLanguage?: TSourceLanguage;
@@ -11,6 +13,7 @@ interface IFlashcardProps {
 
 const Flashcard = (props: IFlashcardProps) => {
     const {
+        cardType,
         config,
         learningLanguage,
         sourceLanguage = 'en'
@@ -22,25 +25,20 @@ const Flashcard = (props: IFlashcardProps) => {
 
     const { learningLanguageWord, sourceLanguageWord } = getRandomWord(words, wordType, rules.articles.def)
 
+    const getFlashcard = (cardType: TFlashcardType) => {
+      switch(cardType) {
+        case 'singleWord':
+        default:
+          return <SingleWordCard learningLanguage={learningLanguage} sourceLanguage={sourceLanguage} learningLanguageWord={learningLanguageWord} sourceLanguageWord={sourceLanguageWord} />
+      }
+    }
+
   return (
     <Card sx={{ width: 350,
       justifyContent: 'center',
       // margin: '0 auto',
       display: 'grid' }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }}>
-          {sourceLanguage}
-        </Typography>
-        <Typography variant="h5">
-          {sourceLanguageWord}
-        </Typography>
-        <Typography sx={{ fontSize: 14, marginTop: '20px' }}>
-          {learningLanguage}
-        </Typography>
-        <Typography variant="h5">
-            {learningLanguageWord}
-        </Typography>
-      </CardContent>
+      {getFlashcard(cardType)}
     </Card>
   );
 }

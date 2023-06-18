@@ -79,3 +79,5 @@ export type TArticleType = 'def' | 'indef' | 'none'
 export type TSourceLanguage = 'en'
 
 export type TLearningLanguage = 'de' 
+
+export type TFlashcardType = 'sentenceQuiz' | 'singleWord' | 'singleWordQuiz'

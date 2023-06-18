@@ -6,7 +6,9 @@ const Home = () => {
     <main>
       <Flashcard style={{
         alignItems: 'center'
-      }} learningLanguage='de'
+      }}
+      cardType={'singleWord'} 
+      learningLanguage='de'
       config={config}
        />
     </main>
