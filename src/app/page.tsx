@@ -1,9 +1,13 @@
-import React from 'react';
+import Flashcard from "@/components/Flashcard";
 
 const Home = () => {
   return (
     <main>
-      <div>Hello</div>
+      <Flashcard style={{
+        alignItems: 'center'
+      }} learningLanguage='de'
+      learningLanguageWord='Wurst'
+      sourceLanguageWord='Sausage' />
     </main>
   );
 };
