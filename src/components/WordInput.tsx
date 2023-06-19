@@ -1,9 +1,21 @@
-interface IWordInputProps {}
+import { ChangeEvent, useState } from 'react';
+import { TextField } from '../mui';
 
-const SingleWordCard = (props: IWordInputProps) => {
-  const {} = props;
+interface IWordInputProps {
+  answer: string;
+}
 
-  return null;
+const WordInput = (props: IWordInputProps) => {
+  const { answer } = props;
+
+  const [text, setText] = useState('');
+
+  return (
+    <TextField
+      value={text}
+      onChange={(ev: ChangeEvent<HTMLInputElement>) => setText(ev.target.value)}
+    />
+  );
 };
 
-export default SingleWordCard;
+export default WordInput;

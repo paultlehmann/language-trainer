@@ -27,7 +27,11 @@ const SingleWordCard = (props: ISingleWordCardProps) => {
         {learningLanguage}
       </Typography>
       <Typography variant="h5">
-        {interactive ? <WordInput /> : learningLanguageWord}
+        {interactive ? (
+          <WordInput answer={learningLanguageWord} />
+        ) : (
+          learningLanguageWord
+        )}
       </Typography>
     </CardContent>
   );
