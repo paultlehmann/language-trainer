@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { TextField } from '../mui';
+import { TextField } from '@mui/material';
 
 interface IWordInputProps {
   answer: string;

@@ -1,4 +1,4 @@
-import { CardContent, Typography } from '../mui';
+import { CardContent, Typography } from '@mui/material';
 import WordInput from './WordInput';
 import { TLearningLanguage, TSourceLanguage } from '../types';
 

@@ -1,4 +1,4 @@
-import { Card } from '../mui';
+import { Card } from '@mui/material';
 // import SentenceCard from './SentenceCard'
 import SingleWordCard from './SingleWordCard';
 import { getRandomWord } from '../util/word';
@@ -35,7 +35,7 @@ const Flashcard = (props: IFlashcardProps) => {
     rules.articles.def
   );
 
-  const interactive = true;
+  const interactive = false;
 
   // const buildSentence = (lang: TLearningLanguage | TSourceLanguage) => {
 
